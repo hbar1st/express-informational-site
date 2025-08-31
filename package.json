@@ -1,0 +1,23 @@
+{
+  "name": "express-informational-site",
+  "version": "1.0.0",
+  "description": "TOP Express&Node Basic Informational Site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hbar1st/express-informational-site.git"
+  },
+  "author": "hbar1st",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hbar1st/express-informational-site/issues"
+  },
+  "homepage": "https://github.com/hbar1st/express-informational-site#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "node": "^22.19.0"
+  }
+}
