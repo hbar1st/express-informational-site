@@ -61,6 +61,27 @@ app.get("/contact-me", (req, res, next) => {
     }
   });
 });
+
+//matches any path (so will be a catch-all for the 404 message)
+app.get("/{*any}", (req, res) => {
+    const options = {
+        root: path.join(__dirname, "public"),
+        dotfiles: "deny",
+        headers: {
+            "x-timestamp": Date.now(),
+            "x-sent": true,
+        },
+    };
+
+    res.sendFile("./404.html", options, (err) => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log("Sent: 404.html");
+        }
+    });
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, (error) => {
     if (error) {
