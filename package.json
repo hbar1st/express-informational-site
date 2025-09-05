@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/hbar1st/express-informational-site#readme",
   "dependencies": {
+    "ejs": "^3.1.10",
     "express": "^5.1.0",
     "node": "^22.19.0"
   }
