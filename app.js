@@ -6,13 +6,14 @@ const app = express(); //<== initialize the server
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
 
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "ejs");
+// don't need to expliciy set the views property if the path is a folder called views in the root path
+//app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs"); // alternatively you could use other template engines like Pug/Handlebars/...
+// also note that we don't need to explicitly import/require the template enginge as express does that for us under the covers
 
 const authorRouter = require("./routes/authorRouter");
 const bookRouter = require("./routes/bookRouter");
 const indexRouter = require("./routes/indexRouter");
-
 
 // app.js
 
@@ -25,6 +26,12 @@ const users = ["Rose", "Cake", "Biff"];
 
 app.get("/", (req, res) => {
   res.render("index", { links: links, users: users });
+});
+
+const books = ["Rose Book", "Cake Book", "Biff Book"];
+
+app.get("/books", (req, res) => {
+  res.render("books", { links: links, books: books });
 });
 
 app.use("/authors", authorRouter);

@@ -1,0 +1,18 @@
+<!-- index.ejs -->
+<html>
+  <head>
+    <title>Homepage</title>
+    <link rel="stylesheet" href="/book-styles.css">
+  </head>
+  <body>
+    <%- include('navbar', {links: links}) %>
+  
+    <ul>
+      <% books.forEach((book) => { %>
+      <%- include('books/book', {book: book}); %>
+      <% }); %>
+    </ul>
+    <p>test should be red</p>
+  </body>
+</html>
+  
